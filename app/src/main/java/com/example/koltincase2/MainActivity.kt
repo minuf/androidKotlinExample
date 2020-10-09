@@ -2,6 +2,7 @@ package com.example.koltincase2
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.widget.Toolbar
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -18,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+//        val toolbar: Toolbar = findViewById<Toolbar>(R.id.toolbar)
+//        setSupportActionBar(toolbar)
+        getSupportActionBar()?.setDisplayShowTitleEnabled(false);
+
         val recyclerView = findViewById<RecyclerView>(R.id.recyclerview)
         val adapter = ProductListAdapter(this)
         recyclerView.adapter = adapter
@@ -28,27 +33,5 @@ class MainActivity : AppCompatActivity() {
             // Update the cached copy of the products in the adapter.
             products?.let { adapter.setProducts(it) }
         })
-
-//        val fab = findViewById<FloatingActionButton>(R.id.fab)
-//        fab.setOnClickListener {
-//            val intent = Intent(this@MainActivity, NewProductActivity::class.java)
-//            startActivityForResult(intent, newProductActivityRequestCode)
-//        }
     }
-
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//
-//        if (requestCode == newProductActivityRequestCode && resultCode == Activity.RESULT_OK) {
-//            data?.getStringExtra(NewProductActivity.EXTRA_REPLY)?.let {
-//                val product = Product(it)
-//                productViewModel.insert(product)
-//            }
-//        } else {
-//            Toast.makeText(
-//                applicationContext,
-//                R.string.empty_not_saved,
-//                Toast.LENGTH_LONG).show()
-//        }
-//    }
 }

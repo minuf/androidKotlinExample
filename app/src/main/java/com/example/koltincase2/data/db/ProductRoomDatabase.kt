@@ -29,12 +29,11 @@ abstract class ProductRoomDatabase : RoomDatabase() {
                     productDao.deleteAll()
 
                     // Add sample words.
-                    var product = Product("1", "Hello")
+                    var product = Product(1, "Conga 5490", "579.00", "998.33", "42 %", "https://www.storececotec.com/8952-home_default/conga-5490.jpg")
                     productDao.insert(product)
-                    product = Product("2", "World!")
+                    product = Product(2, "Conga 990 Vital", "148.00", "315.00", "53 %", "https://www.storececotec.com/7073-home_default/conga-990-vital.jpg")
                     productDao.insert(product)
-
-                    product = Product("3", "TODO!")
+                    product = Product(3, "Conga Serie 1090 + WinDroid 870 Connected", "289.00", "481.67", "40 %", "https://www.storececotec.com/9627-home_default/conga-1090-windroid-870-connected.jpg")
                     productDao.insert(product)
                 }
             }
